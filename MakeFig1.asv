@@ -1,5 +1,5 @@
 %% Figure 1 plot
-% plots HFA vs DP HF
+% plots HFA vs DP i
 function [fig1] = MakeFig1(data, params)
 
 figure_prop_name = {'PaperPositionMode', 'units', 'Position'};
