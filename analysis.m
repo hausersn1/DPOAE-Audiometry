@@ -4,6 +4,10 @@ clear; close all;
 
 load('ARO2023_data.mat'); 
 
+addpath('/earCalibs/'); 
+calibFiles = {'Calib_Ph1ER-10X_S252REar_10-Aug-2021_08_25_16.mat'; ...
+    'Calib_Ph1ER-10X_s34REar_10-Dec-2021_15_42_24.mat'; ...
+    'Calib_Ph1ER-10X_S308REar_04-Dec-2021_18_41_07.mat'};
 %% Plotting
 
 % create params struct
@@ -63,11 +67,15 @@ print -dpng -r600 fig4
 [fig5] = MakeFig5(data, params); 
 print -dpng -r600 fig5
 
-
 % Make Figure 6 - nothing useful rn, just for trying things out
 % tested EHF audio vs dpHF and nothing really good. 
 [fig6] = MakeFig6(data, params); 
 print -dpng -r600 fig6
+
+% Make Figure 7 - Calibration variation 
+[fig7] = MakeFig7(calibFiles, params); 
+print -dpng -r600 fig7
+
 
 %% 
 
