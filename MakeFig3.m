@@ -1,17 +1,17 @@
-%% Figure 1 plot
-% plots Audiometry vs DP for HF data
-function [fig1] = MakeFig1(data, params)
+%% Figure 3 plot
+% plots Audiometry vs DP for EHF
+function [fig3] = MakeFig3(data, params)
 
 figure_prop_name = {'PaperPositionMode', 'units', 'Position'};
 figure_prop_val = {'auto', 'inches', [1 1 params.fig.width params.fig.height]}; % xcor, ycor, xwid, yheight
 
 
-fig1 = figure(1); clf
+fig3 = figure(3); clf
 set(gcf,figure_prop_name,figure_prop_val);
 
-% HF
-scatter(data.HFA, data.DPhfa, 'Marker', params.sym_F, 'SizeData', params.SizeData, ...
-    'MarkerFaceColor', params.color_4, 'MarkerEdgeColor', params.color_4)
+% EHF
+scatter(data.EHFA, data.DPehfa, 'Marker', params.sym_F, 'SizeData', params.SizeData, ...
+    'MarkerFaceColor', params.color_5, 'MarkerEdgeColor', params.color_5)
 
 % Lines to mark "normal"
 hold on; 
@@ -19,13 +19,12 @@ plot([-20, 80], [-15, -15], '--', 'LineWidth', params.LineWidth, 'Color', params
 plot([25, 25], [-40, 30], '--', 'LineWidth', params.LineWidth, 'Color', params.LineColor) % normal hearing cut-off
 hold off; 
 
-% Title, labels, legend
-% text(params.ABC.Xcorr, params.ABC.Ycorr,'A','FontSize',params.ABCFontSize,'Color','k','Units','norm')
-title('High-Frequency', 'FontSize', params.TitleFontSize); 
-subtitle('3-8 kHz', 'FontSize', params.TitleFontSize - 2); 
+% text(params.ABC.Xcorr, params.ABC.Ycorr,'B','FontSize',params.ABCFontSize,'Color','k','Units','norm')
+title('Extended High-Frequency', 'FontSize', params.TitleFontSize); 
+subtitle('9-16 kHz', 'FontSize', params.TitleFontSize - 2); 
 xlabel('Audiometric Threshold (dB HL)'); 
 ylabel('DPOAE Amplitude (dB EPL)'); 
-xlim([-10 30]); 
+xlim([-20 80]); 
 ylim(params.DP_axis); 
 
 set(gca, 'FontName', params.Font, 'FontSize', params.LabelFontSize, 'TickLength', params.TickLength)
