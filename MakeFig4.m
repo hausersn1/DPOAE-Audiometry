@@ -20,7 +20,7 @@ scatter(data.HFA, data.DPhfa, 'Marker', params.sym_F, 'SizeData', params.SizeDat
 
 % Lines to mark "normal"
 hold on; 
-plot([-20, 80], [-15, -15], '--', 'LineWidth', params.LineWidth, 'Color', params.LineColor) % OAE noise floor
+plot([-20, 80], [-25, -25], '--', 'LineWidth', params.LineWidth, 'Color', params.LineColor) % OAE noise floor
 plot([25, 25], [-40, 30], '--', 'LineWidth', params.LineWidth, 'Color', params.LineColor) % normal hearing cut-off
 hold off; 
 
