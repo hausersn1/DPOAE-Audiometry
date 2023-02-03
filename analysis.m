@@ -5,16 +5,15 @@ clear; close all;
 load('ARO2023_data.mat'); 
 
 addpath('earCalibs/'); 
-calibFiles = {'Calib_Ph1ER-10X_CM_VanderbiltREar_05-Mar-2020_10_12_29'; 
-    'Calib_Ph1ER-10X_DHLEar_10-Oct-2022_16_54_51'; 
-    'Calib_Ph1ER-10X_HBREar_03-Oct-2022_17_04_26';
-    'Calib_Ph1ER-10X_s34REar_10-Dec-2021_15_42_24.mat'; 
-    'Calib_Ph1ER-10X_S252REar_10-Aug-2021_08_25_16.mat'; 
-    'Calib_Ph1ER-10X_S308REar_04-Dec-2021_18_41_07.mat'; 
-    'Calib_Ph1ER-10X_SamLEar_06-Mar-2022_20_12_42'; 
-    'Calib_Ph1ER-10X_SHLEar_02-Aug-2022_15_51_18';
-    'Calib_Ph1ER-10X_SHREar_03-Oct-2022_15_18_55';
-    'Calib_Ph1ER-10X_SHREar_25-Aug-2021_14_34_39'};
+calibFiles=dir('earCalibs/'); 
+%calibFiles = {'Calib_Ph1ER-10X_DHLEar_10-Oct-2022_16_54_51'; 
+%     'Calib_Ph1ER-10X_S252REar_10-Aug-2021_08_25_16.mat'; 
+%     'Calib_Ph1ER-10X_SHLEar_02-Aug-2022_15_51_18';
+%     'Calib_Ph1ER-10X_SHREar_03-Oct-2022_15_18_55';
+%     'Calib_Ph1ER-10X_SHREar_25-Aug-2021_14_34_39'; 
+%     'Calib_Ph1ER-10X_SamTestREar_29-Sep-2021_12_56_03'; 
+%     'Calib_Ph1ER-10X_Sam_TestREar_03-Nov-2021_15_38_53';
+%     'Calib_Ph1ER-10X_Sam_testREar_11-Oct-2021_14_45_59'};
 
 matrix = [ data.HFA, data.EHFA, data.DPhfa, data.DPehfa, data.Age]; 
 [rho, pval] = corr(matrix);

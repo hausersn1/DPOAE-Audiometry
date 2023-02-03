@@ -13,14 +13,16 @@ set(gca, 'FontName', params.Font, 'XTick',[0.25, 0.5, 1, 2, 4, 8, 16], ...
     'FontSize', params.LabelFontSize, 'TickLength', params.TickLength, ...
     'xscale', 'log')
 
-colors = [params.color_1, params.color_2, params.color_5, params.color_4, params.color_3, params.color_1, params.color_2, params.color_5, params.color_4, params.color_3,]; 
+colors = [params.color_2, params.color_4, params.color_3, params.color_5]; 
 
-for i = [9, 10]
+j=1;
+for i = [5, 8]
     % Load calib file before running
-    load(data{i});
+    load(data(i).name);
     % Plot transfer function
     hold on;
-    plot(calib.freq * 1e-3, db(abs(calib.Pfor)), 'linew', params.LineWidth, 'Color', colors(i));
+    plot(calib.freq * 1e-3, db(abs(calib.Pfor)), 'linew', params.LineWidth, 'Color', colors(j));
+    j=j+1; 
     hold off; 
 end
 

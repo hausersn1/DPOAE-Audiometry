@@ -15,7 +15,7 @@ set(gca, 'FontName', params.Font, 'XTick',[0.25, 0.5, 1, 2, 4, 8, 16], ...
 
 colors = [params.color_1, params.color_2, params.color_5, params.color_4, params.color_3, params.color_1, params.color_2, params.color_5, params.color_4, params.color_3,]; 
 
-for i = [2,8,5]
+for i = [1, 2, 3]
     % Load calib file before running
     load(data{i});
     % Plot transfer function
