@@ -1,5 +1,8 @@
 %% Figure 6 plot
-% Swept DPOAE example
+% high frequency DPOAE vs extend HF audiometry
+% Does running OAEs help you predict damage at audiometric range you're not
+% testing? 
+
 function [fig6] = MakeFig6(data, params)
 
 figure_prop_name = {'PaperPositionMode', 'units', 'Position'};

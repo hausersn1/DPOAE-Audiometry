@@ -13,6 +13,13 @@ set(gcf,figure_prop_name,figure_prop_val);
 scatter(data.HFA, data.DPhfa, 'Marker', params.sym_F, 'SizeData', params.SizeData, ...
     'MarkerFaceColor', params.color_4, 'MarkerEdgeColor', params.color_4)
 
+hold on; 
+mb = polyfit(data.HFA, data.DPhfa, 1); 
+xfit = [min(data.HFA)-3, max(data.HFA)+3]; 
+yfit = polyval(mb, xfit); 
+plot(xfit, yfit, 'LineWidth', 2, 'Color', params.color_4)
+ 
+
 % Lines to mark "normal"
 hold on; 
 plot([-20, 80], [-25, -25], '--', 'LineWidth', params.LineWidth, 'Color', params.LineColor) % OAE noise floor
@@ -20,7 +27,7 @@ plot([25, 25], [-40, 30], '--', 'LineWidth', params.LineWidth, 'Color', params.L
 hold off; 
 
 % Title, labels, legend
-% text(params.ABC.Xcorr, params.ABC.Ycorr,'A','FontSize',params.ABCFontSize,'Color','k','Units','norm')
+text(params.ABC.Xcorr, params.ABC.Ycorr,'r = %d','FontSize',params.ABCFontSize,'Color','k','Units','norm')
 title('High-Frequency', 'FontSize', params.TitleFontSize); 
 subtitle('3-8 kHz', 'FontSize', params.TitleFontSize - 2); 
 xlabel('Audiometric Threshold (dB HL)'); 
